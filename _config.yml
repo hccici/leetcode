@@ -4,7 +4,7 @@
 
 # Site
 title: lelouch的leetcode刷题记录
-subtitle: leetcode刷题记录，包含每一题个人思路详解。
+subtitle: leetcode刷题记录，每一题都包含个人思路详解。
 description: 用来记录个人的leetcode刷题记录，包含每一题个人思路详解。
 keywords: [js,leetcode]
 author: lelouch
@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: maupassant
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
