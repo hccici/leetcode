@@ -10,21 +10,26 @@ export default class Tree {
    * @param {Array} arr
    * @return {Tree}
    */
-  getTree(arr) {
-    arr = [...arr]
-    arr[0] = new TreeNode(arr[0])
-    for (let i = 0; i < arr.length; i++) {
-      let leftIndex = 2 * i + 1
-      let rightIndex = 2 * i + 2
-      if (leftIndex < arr.length) {
-        arr[leftIndex] = new TreeNode(arr[leftIndex])
-        arr[i].left = arr[leftIndex]
-      }
-      if (rightIndex < arr.length) {
-        arr[rightIndex] = new TreeNode(arr[rightIndex])
-        arr[i].right = arr[rightIndex]
-      }
+  getTree(data) {
+    if (data.length === 0) {
+      return null
     }
-    return arr[0]
+    const head = new TreeNode(data[0])
+    const stack = [head]
+    let p = 1
+    while (stack.length > 0 && p < data.length) {
+      const cur = stack.shift()
+      if (data[p] !== null) {
+        cur.left = new TreeNode(data[p])
+        stack.push(cur.left)
+      }
+      p++
+      if (data[p] !== null) {
+        cur.right = new TreeNode(data[p])
+        stack.push(cur.right)
+      }
+      p++
+    }
+    return head
   }
 }
