@@ -23,7 +23,7 @@ var ladderLength = function (beginWord, endWord, wordList) {
           }
           // 使用过就能去掉了，1是避免重复使用，2是即使通过其它路径也可以转变为这个单词，但是转换长度是一样的，可以不用关心
           queue.push([newWord, level + 1])
-          set.delete(newWord)
+          set.delete(newWord) // !BFS 找路径长度很重要的一步
         }
       }
     }
