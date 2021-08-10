@@ -26,5 +26,6 @@ var subarraySum = function (nums, k) {
       record[sum] += 1
     }
   }
-  return  account
+  return account
 };
+subarraySum([1, 1, 1], 2)
