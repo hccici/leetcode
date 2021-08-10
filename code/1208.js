@@ -4,7 +4,7 @@
  * @param {number} maxCost
  * @return {number}
  */
-var equalSubstring = function (s, t, maxCost) {
+ var equalSubstring = function (s, t, maxCost) {
   const arr = []
   for (let i = 0; i < s.length; i++) {
     arr.push(Math.abs(s[i].charCodeAt() - t[i].charCodeAt()))
@@ -32,18 +32,11 @@ var equalSubstring = function (s, t, maxCost) {
       setMaxLength(lp, rp)
     }
     // 缩小范围(过大缩小、到顶缩小)
-    if (cost > maxCost || rp === arr.length - 1) {
+    if (cost > maxCost ) {
       lp++
-      // 整体向右
-      if (lp > rp) {
-        rp++
-      }
       // 扩大范围 
     } else {
-      // 范围限制
-      if (rp < arr.length - 1) {
-        rp++
-      }
+      rp++
     }
   }
   return maxLength

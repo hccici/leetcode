@@ -40,7 +40,7 @@ var shortestBridge = function (A) {
   let flag = true
   // 向外扩张并记录扩张后的岛的边缘节点
   function preVist(row, col) {
-    if (row < 0 || row >= rows || col < 0 || col >= cols || A[row][col] === 3 || A[row][col] === 2) {
+    if (row < 0 || row >= rows || col < 0 || col >= cols || A[row][col] === 2) {
       return false
     }
     // 碰到了另一座岛
@@ -59,8 +59,6 @@ var shortestBridge = function (A) {
       preVist(row - 1, col) && newBorder.push([row - 1, col])
       preVist(row, col + 1) && newBorder.push([row, col + 1])
       preVist(row, col - 1) && newBorder.push([row, col - 1])
-      // 扩张
-      A[row][col] = 3
     }
     count++
     return newBorder
